@@ -1,0 +1,34 @@
+name: Build Completion Duck
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - "**"
+
+permissions:
+  contents: read
+
+jobs:
+  build-windows:
+    name: Build Windows .geode
+    runs-on: windows-latest
+
+    steps:
+      - name: Download project
+        uses: actions/checkout@v7
+
+      - name: Build mod
+        id: build
+        uses: geode-sdk/build-geode-mod@main
+        with:
+          sdk: "5.10.1"
+          target: Win64
+          build-config: Release
+
+      - name: Upload finished mod
+        uses: actions/upload-artifact@v7
+        with:
+          name: CompletionDuck-Windows
+          path: ${{ steps.build.outputs.build-output }}
+          if-no-files-found: error

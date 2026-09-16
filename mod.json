@@ -1,0 +1,45 @@
+{
+  "geode": "5.10.1",
+  "gd": {
+    "win": "2.2081"
+  },
+  "version": "v1.1.0",
+  "id": "connor.completion_duck",
+  "name": "Completion Duck",
+  "developer": "Connor Stanley",
+  "description": "Lowers the level song during the completion jingle so a custom endStart.ogg is easier to hear.",
+  "settings": {
+    "music-percent": {
+      "name": "Level Song Volume",
+      "description": "How loud the level song remains while the completion jingle plays.",
+      "type": "int",
+      "default": 30,
+      "min": 5,
+      "max": 100
+    },
+    "fade-down-seconds": {
+      "name": "Fade Down Time",
+      "description": "How quickly the level song smoothly fades down after completing the level.",
+      "type": "float",
+      "default": 0.35,
+      "min": 0.05,
+      "max": 2.0
+    },
+    "hold-seconds": {
+      "name": "Quiet Hold Time",
+      "description": "How long the song remains quiet before beginning to fade back up.",
+      "type": "float",
+      "default": 6.5,
+      "min": 0.0,
+      "max": 20.0
+    },
+    "fade-up-seconds": {
+      "name": "Fade Back Time",
+      "description": "How slowly the level song smoothly returns to its original volume.",
+      "type": "float",
+      "default": 1.25,
+      "min": 0.1,
+      "max": 5.0
+    }
+  }
+}
